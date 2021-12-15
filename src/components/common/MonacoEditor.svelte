@@ -8,11 +8,7 @@
   import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
 
   export let language = 'javascript';
-  export let value = [
-    'function foo() {',
-    '\tconsole.log("Hello world!");',
-    '}',
-  ].join('\n');
+  export let value = '';
 
   const dispatch = createEventDispatcher();
   let divEl: HTMLDivElement = null;
