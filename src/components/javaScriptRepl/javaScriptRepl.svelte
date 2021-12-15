@@ -13,7 +13,7 @@
 
   const handleRunClick = () => {
     iframeContainerChild.runScript();
-    consoleMessages = [...consoleMessages, { text: 'New run!', isBoldClass: true }];
+    // consoleMessages = [...consoleMessages, { text: 'New run!', isBoldClass: true }];
   };
 
   const handleDraggableMouseDown = (event) => {
@@ -39,7 +39,7 @@
   };
 
   const handleEditorMessage = (event) => {
-    consoleMessages = [ ...consoleMessages, {text: event.detail.value} ];
+    consoleMessages = [ ...consoleMessages, {text: JSON.stringify(event.detail.value, undefined, 2)} ];
   };
 
   const handleClearMessages = (event) => {
@@ -128,24 +128,5 @@
     font-weight: 700;
     padding: 5px 10px;
     border-top: 1px solid darkgray;
-  }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent-fill-rest);
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 </style>
