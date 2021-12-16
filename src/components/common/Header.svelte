@@ -4,7 +4,7 @@
 
   const location = useLocation();
   $: locationPath = $location.pathname.split('/')[1];
-  $: appTitle = appLinks.find(appLink => appLink.key === locationPath)?.title;
+  $: appTitle = appLinks.find(appLink => appLink.key === locationPath)?.title || 'Home';
 </script>
 
 <div class="root">

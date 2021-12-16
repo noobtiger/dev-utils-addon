@@ -25,6 +25,9 @@
           <svelte:component this={component} />
         </Route>
       {/each}
+      <Route path="">
+        Please select a tool in the left.
+      </Route>
     </svelte:fragment>
   </AppBody>
 </Router>

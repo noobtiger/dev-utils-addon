@@ -29,7 +29,8 @@
     height: 100%;
   }
   .link-icon {
-    height: 20px;
+    height: 15px;
+    width: 15px;
     margin-right: 10px;
   }
   .tree-item {
