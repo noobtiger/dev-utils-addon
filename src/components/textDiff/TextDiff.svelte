@@ -46,7 +46,7 @@
   .root textarea {
     border-color: var(--accent-fill-rest);
     width: 100%;
-    height: 500px;
+    height: clamp(200px, 600px, 90vh);
     border-radius: 2px;
   }
 

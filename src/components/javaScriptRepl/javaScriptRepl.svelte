@@ -50,7 +50,7 @@
 
 <div class="container">
   <section class="button-container">
-    <fast-button appearance="lightweight" on:click={handleRunClick}>Run</fast-button
+    <fast-button appearance="stealth" on:click={handleRunClick}>Run</fast-button
     >
   </section>
   <MonacoEditor bind:value={editorContentValue} on:update={handleEditorUpdate} />
@@ -77,7 +77,7 @@
   .button-container {
     display: flex;
     border-bottom: 1px solid lightgray;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .button-container > fast-button {
     width: 100px;

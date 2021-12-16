@@ -1,9 +1,8 @@
 <script lang="ts">
   import JsonTreeItem from './JsonTreeItem.svelte';
-  import { MonacoEditor } from '../common';
+  import { MonacoEditor, VerticalDragComponent } from '../common';
 
   let jsonString = '';
-  let containerElement;
 
   const handleUpdate = (event) => {
     jsonString = event.detail.value;
@@ -18,24 +17,6 @@
       jsonObject = {};
     }
   }
-
-  const handleDocumentMouseMove = (event) => {
-    event.preventDefault();
-    containerElement.style[
-      'grid-template-columns'
-    ] = `clamp(230px, ${event.clientX}px, 80%) 10px 1fr`;
-  };
-
-  const handleDocumentMouseUp = () => {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  };
-
-  const handleDraggableMouseDown = (event) => {
-    event.preventDefault();
-    document.onmouseup = handleDocumentMouseUp;
-    document.onmousemove = handleDocumentMouseMove;
-  };
 
   const handleFormatClick = () => {
     jsonString = JSON.stringify(jsonObject, undefined, 2);
@@ -78,35 +59,31 @@
   <fast-button appearance="stealth" on:click={handleCopyClick}>Copy</fast-button
   >
 </header>
-<article class="container" bind:this={containerElement}>
-  <section class="text-area-container">
-    Paste your JSON data here:
-    <MonacoEditor
-      language="json"
-      bind:value={jsonString}
-      on:update={handleUpdate}
-    />
-    <!-- <textarea on:input={handleJsonStringChange} placeholder={`{}`} bind:value={jsonString} /> -->
-  </section>
-  <section class="draggable" on:mousedown={handleDraggableMouseDown}>
-    <div />
-  </section>
-  <section class="json-tree-view">
-    {#if jsonString}
-      <fast-tree-view expanded={true}>
-        <JsonTreeItem json={jsonObject} rootKey="" />
-      </fast-tree-view>
-    {/if}
-  </section>
-</article>
+
+<div class="container">
+  <VerticalDragComponent>
+    <section class="text-area-container" slot="left">
+      Paste your JSON data here:
+      <MonacoEditor
+        language="json"
+        bind:value={jsonString}
+        on:update={handleUpdate}
+      />
+    </section>
+    <section class="json-tree-view" slot="right">
+      {#if jsonString}
+        <fast-tree-view expanded={true}>
+          <JsonTreeItem json={jsonObject} rootKey="" />
+        </fast-tree-view>
+      {/if}
+    </section>
+  </VerticalDragComponent>
+</div>
+
 
 <style>
   .container {
-    display: grid;
-    grid-template-columns: 2fr 10px 1fr;
     height: calc(100% - 6em);
-    gap: 5px;
-    padding: 5px;
   }
   .button-container {
     border-bottom: 1px solid lightgray;
@@ -124,23 +101,5 @@
     border-radius: calc(var(--control-corner-radius) * 1px);
     overflow: auto;
     height: calc(100vh - 6em);
-  }
-
-  .draggable {
-    height: 100%;
-    cursor: col-resize;
-    box-sizing: border-box;
-  }
-
-  .draggable:hover {
-    height: 100%;
-    border: 3px solid darkgray;
-    background-color: lightgray;
-  }
-
-  .draggable > div {
-    margin: 0 3px;
-    height: 100%;
-    background-color: lightgray;
   }
 </style>

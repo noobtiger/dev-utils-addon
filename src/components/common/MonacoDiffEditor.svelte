@@ -7,7 +7,6 @@
   import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
   import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
 
-  export let language = 'plaintext';
   export let value1 = '';
   export let value2 = '';
 

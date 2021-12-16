@@ -1,6 +1,7 @@
 import { JsonFormatterHome } from '../components/jsonFormatter';
 import { JavaScriptReplHome } from '../components/javaScriptRepl';
 import { TextDiffHome } from '../components/textDiff';
+import { MarkdownPreview } from '../components/markdownPreview';
 
 interface AppConfig {
   key: string;
@@ -14,6 +15,7 @@ export const enum AppKeyEnum {
   JsonFormatter = 'json-formatter',
   JavaScriptRepl = 'javascript-repl',
   TextDiff = 'text-diff',
+  MarkdownPreview = 'markdown-preview',
 }
 
 export const appLinks: AppConfig[] = [
@@ -37,5 +39,12 @@ export const appLinks: AppConfig[] = [
     subtitle: 'Compare text differences.',
     icon: '/icons/text-diff.gif',
     component: TextDiffHome,
+  },
+  {
+    key: AppKeyEnum.MarkdownPreview,
+    title: 'Markdown preview',
+    subtitle: 'Preview markdown.',
+    icon: '/icons/markdown-preview.gif',
+    component: MarkdownPreview,
   },
 ];

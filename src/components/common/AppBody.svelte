@@ -21,5 +21,6 @@
   }
 	.root main {
 		background-color: white;
+		height: 100vh;
 	}
 </style>
