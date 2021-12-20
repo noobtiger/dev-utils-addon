@@ -2,7 +2,6 @@
   import { createEventDispatcher, onMount } from 'svelte';
   export let value;
 
-  const EDITOR_SCRIPT_ID = 'editor-script';
   const EDITOR_CONSOLE_MESSAGE_ID = 'editormessage';
   const customIframeScript = `
     const updatedConsole = (function(currentConsole, window) {
@@ -18,20 +17,21 @@
     window.console = updatedConsole;
   `;
 
+  let iframeSrcDoc: string = '';
   let iframeElement: HTMLIFrameElement;
 
   const dispatch = createEventDispatcher();
   
   export const runScript = () => {
-    const iframeBodyElement = iframeElement.contentDocument.body;
-    const scriptElement = document.createElement('script');
-    scriptElement.textContent = `
-      'use strict;'
-      ${customIframeScript}
-      ${value}
+    iframeSrcDoc = `
+    <html>
+          <script>
+            'use strict;'
+            ${customIframeScript}
+            ${value}
+          <\/script>
+      <\/html>
     `;
-    scriptElement.id = EDITOR_SCRIPT_ID;
-    iframeBodyElement.append(scriptElement);
     iframeElement.contentWindow.location.reload();
   };
 
@@ -45,9 +45,7 @@
 
 </script>
 
-<iframe title="Iframe container" style="display: none;" bind:this={iframeElement}>
-  <script id={EDITOR_SCRIPT_ID}></script>
-</iframe>
+<iframe title="Iframe container" style="display: none;" srcdoc={iframeSrcDoc} bind:this={iframeElement} />
 
 <style>
 </style>

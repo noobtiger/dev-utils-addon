@@ -1,0 +1,18 @@
+{
+  "name": "Web developer common tools",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "description": "An extension for common tools for web developers.",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-VRPhP5lvaDsOiBf6IbEBvyFf4VBw8pxSNYv6sIrfuIg='; object-src 'self'",
+  "browser_action": { },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}

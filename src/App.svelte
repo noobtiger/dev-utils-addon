@@ -21,7 +21,7 @@
 				<JsonFormatterHome />
 			</Route> -->
       {#each appLinks as { key, component }}
-        <Route path={`/${key}`}>
+        <Route path={`/${key}`} primary={false}>
           <svelte:component this={component} />
         </Route>
       {/each}
