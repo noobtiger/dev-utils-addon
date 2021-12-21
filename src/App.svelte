@@ -1,5 +1,6 @@
 <script lang="ts">
   import './global.css';
+  import '@fontsource/roboto';
   import { Router, Route } from 'svelte-navigator';
   import { AppBody, Navigation, Header } from './components/common';
   import { appLinks } from './utils/appConfig';
@@ -25,9 +26,7 @@
           <svelte:component this={component} />
         </Route>
       {/each}
-      <Route path="">
-        Please select a tool in the left.
-      </Route>
+      <Route primary={false} path="">Please select a tool in the left.</Route>
     </svelte:fragment>
   </AppBody>
 </Router>

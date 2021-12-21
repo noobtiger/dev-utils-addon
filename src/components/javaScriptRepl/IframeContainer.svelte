@@ -1,51 +1,32 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { createEventDispatcher, onMount, onDestroy } from 'svelte';
   export let value;
-
+  let originalConsole;
   const EDITOR_CONSOLE_MESSAGE_ID = 'editormessage';
-  const customIframeScript = `
-    const updatedConsole = (function(currentConsole, window) {
-      return {
-        ...currentConsole,
-        log: function(message) {
-          window.parent.postMessage(message);
-          currentConsole.log(message);
-        }
-      };
-    }(window.console, window));
-
-    window.console = updatedConsole;
-  `;
-
-  let iframeSrcDoc: string = '';
-  let iframeElement: HTMLIFrameElement;
-
-  const dispatch = createEventDispatcher();
-  
-  export const runScript = () => {
-    iframeSrcDoc = `
-    <html>
-          <script>
-            'use strict;'
-            ${customIframeScript}
-            ${value}
-          <\/script>
-      <\/html>
-    `;
-    iframeElement.contentWindow.location.reload();
-  };
 
   onMount(() => {
-    window.addEventListener('message', (event) => {
-      dispatch(EDITOR_CONSOLE_MESSAGE_ID, {
-        value: event.data,
-      });
-    });
+    const updatedConsole = (function (currentConsole, window) {
+      return {
+        ...currentConsole,
+        log: function (message) {
+          dispatch(EDITOR_CONSOLE_MESSAGE_ID, {
+            value: message,
+          });
+          currentConsole.log(message);
+        },
+      };
+    })(window.console, window);
+    originalConsole = window.console;
+    window.console = updatedConsole;
   });
 
+  const dispatch = createEventDispatcher();
+
+  export const runScript = () => {
+    Function(value)();
+  };
+
+  onDestroy(() => {
+    window.console = originalConsole;
+  });
 </script>
-
-<iframe title="Iframe container" style="display: none;" srcdoc={iframeSrcDoc} bind:this={iframeElement} />
-
-<style>
-</style>

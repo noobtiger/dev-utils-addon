@@ -9,7 +9,7 @@
     "48": "icon.png",
     "128": "icon.png"
   },
-  "content_security_policy": "script-src 'self' 'sha256-VRPhP5lvaDsOiBf6IbEBvyFf4VBw8pxSNYv6sIrfuIg='; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": { },
   "background": {
     "scripts": ["background.js"],

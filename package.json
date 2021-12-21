@@ -27,6 +27,7 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.1",
     "@microsoft/fast-components": "^2.16.7",
     "marked": "^4.0.7",
     "monaco-editor": "^0.31.0",
