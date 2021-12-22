@@ -8,11 +8,10 @@
 </script>
 
 <fast-tree-view class="container">
-  {#each appLinks as { key, title, icon }}
+  {#each appLinks as { key, title }}
     <div class="wrapper">
       <Link to={key} class="link">
         <fast-tree-item class="tree-item" selected={key === locationPath}>
-          <img class="link-icon" src={icon} alt={title} />
           <span class="title">{title}</span>
         </fast-tree-item>
       </Link>
@@ -27,11 +26,6 @@
   }
   .gap-container {
     height: 100%;
-  }
-  .link-icon {
-    height: 15px;
-    width: 15px;
-    margin-right: 10px;
   }
   .tree-item {
     background-color: rgba(255, 255, 255, .3);

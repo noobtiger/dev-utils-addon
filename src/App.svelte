@@ -18,9 +18,6 @@
       <Header />
     </svelte:fragment>
     <svelte:fragment slot="main">
-      <!-- <Route path={`/${AppKeyEnum.JsonFormatter}`}>
-				<JsonFormatterHome />
-			</Route> -->
       {#each appLinks as { key, component }}
         <Route path={`/${key}`} primary={false}>
           <svelte:component this={component} />
