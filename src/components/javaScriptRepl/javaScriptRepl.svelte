@@ -93,7 +93,7 @@
     overflow: auto;
   }
   .console-container > header {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 400;
     padding: 2px 5px;
     position: fixed;
@@ -119,7 +119,7 @@
   }
 
   .console-messages-container > article {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     border-bottom: 1px solid lightgray;
     padding: 0 10px;
   }

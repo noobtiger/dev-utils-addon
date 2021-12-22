@@ -14,8 +14,8 @@
 <style>
   .root {
     text-align: center;
-    font-size: 1.2em;
-    line-height: 2em;
+    font-size: 1.2rem;
+    line-height: 2rem;
     width: 100%;
     border-bottom: 0.5px solid var(--accent-fill-rest);
   }

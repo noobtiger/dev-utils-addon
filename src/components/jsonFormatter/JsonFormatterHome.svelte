@@ -63,7 +63,7 @@
 <div class="container">
   <VerticalDragComponent>
     <section class="text-area-container" slot="left">
-      Paste your JSON data here:
+      <span class="container-header">Paste your JSON data here:</span>
       <MonacoEditor
         language="json"
         bind:value={jsonString}
@@ -101,5 +101,9 @@
     border-radius: calc(var(--control-corner-radius) * 1px);
     overflow: auto;
     height: calc(100vh - 6em);
+  }
+
+  .container-header {
+    font-size: 1rem;
   }
 </style>

@@ -58,7 +58,7 @@
     height: auto;
   }
   fast-tree-item::part(content-region) {
-    height: 1em;
-    line-height: 1em;
+    height: 1rem;
+    line-height: 1rem;
   }
 </style>

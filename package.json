@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "pack-extension": "rimraf dist && npm run build && ncp extension dist"
+    "build-extension": "rimraf dist && npm run build && ncp extension dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",

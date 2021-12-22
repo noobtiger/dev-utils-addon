@@ -8,8 +8,3 @@ Get the extension/addon [here](https://chrome.google.com/webstore/detail/web-dev
 - Text diff
 - Markdown preview
 
-**Features**
-- Completely offline
-- Open source
-- Built using svelte and TypeScript.
-
