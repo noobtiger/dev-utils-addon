@@ -2,6 +2,7 @@ import { JsonFormatterHome } from '../components/jsonFormatter';
 import { JavaScriptReplHome } from '../components/javaScriptRepl';
 import { TextDiffHome } from '../components/textDiff';
 import { MarkdownPreview } from '../components/markdownPreview';
+import { LoremIpsumGenerator } from '../components/loremIpsumGenerator';
 
 interface AppConfig {
   key: string;
@@ -16,6 +17,7 @@ export const enum AppKeyEnum {
   JavaScriptRepl = 'javascript-repl',
   TextDiff = 'text-diff',
   MarkdownPreview = 'markdown-preview',
+  LoremIpsumGenerator = 'lorem-ipsum-gen'
 }
 
 export const appLinks: AppConfig[] = [
@@ -46,5 +48,12 @@ export const appLinks: AppConfig[] = [
     subtitle: 'Preview markdown.',
     icon: '/icons/markdown-preview.png',
     component: MarkdownPreview,
+  },
+  {
+    key: AppKeyEnum.LoremIpsumGenerator,
+    title: 'Lorem Ipsum generator',
+    subtitle: 'Generate Lorem ipsum text.',
+    icon: '/icons/lorem-ipsum-generate.png',
+    component: LoremIpsumGenerator,
   },
 ];
