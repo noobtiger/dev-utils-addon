@@ -3,6 +3,7 @@ import { JavaScriptReplHome } from '../components/javaScriptRepl';
 import { TextDiffHome } from '../components/textDiff';
 import { MarkdownPreview } from '../components/markdownPreview';
 import { LoremIpsumGenerator } from '../components/loremIpsumGenerator';
+import { HtmlCssPlayground } from '../components/htmlCssPlayground';
 
 interface AppConfig {
   key: string;
@@ -17,7 +18,8 @@ export const enum AppKeyEnum {
   JavaScriptRepl = 'javascript-repl',
   TextDiff = 'text-diff',
   MarkdownPreview = 'markdown-preview',
-  LoremIpsumGenerator = 'lorem-ipsum-gen'
+  LoremIpsumGenerator = 'lorem-ipsum-gen',
+  HtmlCssPlayground = 'html-css-playground',
 }
 
 export const appLinks: AppConfig[] = [
@@ -55,5 +57,12 @@ export const appLinks: AppConfig[] = [
     subtitle: 'Generate Lorem ipsum text.',
     icon: '/icons/lorem-ipsum-generate.png',
     component: LoremIpsumGenerator,
+  },
+  {
+    key: AppKeyEnum.HtmlCssPlayground,
+    title: 'HTML/CSS playground',
+    subtitle: 'Test out HTML, CSS.',
+    icon: '/icons/code-playground.png',
+    component: HtmlCssPlayground,
   },
 ];
