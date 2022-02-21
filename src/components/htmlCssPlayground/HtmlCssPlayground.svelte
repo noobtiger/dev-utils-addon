@@ -1,10 +1,9 @@
 <script lang="ts">
   import { MonacoEditor, VerticalDragComponent } from '../common';
-  import IframeContainer from './IframeContainer.svelte';
+  import IframeElement from './IframeElement.svelte';
 
   let htmlContentValue;
   let cssContentValue;
-
   const handleHtmlUpdate = () => {
 
   };
@@ -28,7 +27,7 @@
     </section>
     <section slot="right">
       <div class="output-container">
-        <IframeContainer bind:cssContent={cssContentValue}  bind:htmlContent={htmlContentValue} />
+        <IframeElement bind:cssContent={cssContentValue}  bind:htmlContent={htmlContentValue} />
       </div>
     </section>
   </VerticalDragComponent>
