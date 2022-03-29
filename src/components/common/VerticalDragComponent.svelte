@@ -33,7 +33,7 @@
   .root {
     display: grid;
     grid-template-columns: 1fr 10px 1fr;
-    height: 100%;
+    height: calc(100% - 2em);
     gap: 5px;
     padding: 5px;
   }
