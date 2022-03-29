@@ -17,6 +17,9 @@
     font-size: 1.2rem;
     line-height: 2rem;
     width: 100%;
-    border-bottom: 0.5px solid var(--accent-fill-rest);
+    /* border-bottom: 0.5px solid var(--accent-fill-rest); */
+    background-color: var(--neutral-layer-4);
+    color: var(--neutral-foreground-rest);
+    /* box-shadow: 0 1px 2px 0 var(--accent-fill-rest); */
   }
 </style>

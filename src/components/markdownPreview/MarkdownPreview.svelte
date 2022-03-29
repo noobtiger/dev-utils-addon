@@ -33,10 +33,11 @@
   }
 
   .container textarea {
-    border-color: var(--accent-fill-rest);
+    border-color: transparent;
     width: 100%;
     height: 100%;
     border-radius: 4px;
+    background-color: var(--neutral-layer-4);
   }
 
   .markdown-preview {

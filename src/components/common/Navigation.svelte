@@ -28,7 +28,7 @@
     height: 100%;
   }
   .tree-item {
-    background-color: rgba(255, 255, 255, .3);
+		background-color: var(--neutral-layer-4);
     backdrop-filter: blur(5px);
   }
   .wrapper :global(.link) {

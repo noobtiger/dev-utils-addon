@@ -49,10 +49,10 @@
 
 <style>
   .string-color {
-    color: blue;
+    color: #ce9178;
   }
   .number-color {
-    color: green;
+    color: #b5cea8;
   }
   fast-tree-item::part(positioning-region) {
     height: auto;
@@ -60,5 +60,8 @@
   fast-tree-item::part(content-region) {
     height: 1rem;
     line-height: 1rem;
+  }
+  fast-tree-item span {
+    color: #9cdcfe;
   }
 </style>

@@ -3,10 +3,13 @@ import {
   provideFASTDesignSystem,
   baseLayerLuminance,
   StandardLuminance,
+  bodyFont,
 } from '@microsoft/fast-components';
 
 export const registerFastComponents = () => {
   provideFASTDesignSystem().register(allComponents);
-  baseLayerLuminance.withDefault(StandardLuminance.LightMode);
+  baseLayerLuminance.withDefault(StandardLuminance.DarkMode);
+
+  bodyFont.withDefault('Roboto');
 };
 

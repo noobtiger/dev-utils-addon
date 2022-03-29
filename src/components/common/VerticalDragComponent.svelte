@@ -46,13 +46,13 @@
 
   .draggable:hover {
     height: 100%;
-    border: 3px solid darkgray;
-    background-color: lightgray;
+    border: 3px solid var(--neutral-fill-input-hover);
+    background-color: var(--accent-fill-hover);
   }
 
   .draggable > div {
     margin: 0 3px;
     height: 100%;
-    background-color: lightgray;
+    background-color:  var(--accent-fill-rest);
   }
 </style>

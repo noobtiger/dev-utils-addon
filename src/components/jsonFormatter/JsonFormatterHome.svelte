@@ -47,16 +47,16 @@
 </script>
 
 <header class="button-container">
-  <fast-button appearance="stealth" on:click={handleFormatClick}
+  <fast-button appearance="lightweight" on:click={handleFormatClick}
     >Beautify</fast-button
   >
-	<fast-button appearance="stealth" on:click={handleMinifyClick}
+	<fast-button appearance="lightweight" on:click={handleMinifyClick}
 		>Minify</fast-button
 	>
-  <fast-button appearance="stealth" on:click={handleDownloadClick}
+  <fast-button appearance="lightweight" on:click={handleDownloadClick}
     >Download</fast-button
   >
-  <fast-button appearance="stealth" on:click={handleCopyClick}>Copy</fast-button
+  <fast-button appearance="lightweight" on:click={handleCopyClick}>Copy</fast-button
   >
 </header>
 
@@ -85,22 +85,20 @@
   .container {
     height: calc(100% - 6em);
   }
-  .button-container {
-    border-bottom: 1px solid lightgray;
-  }
   .button-container > fast-button {
     margin: 0 5px;
   }
 
   .text-area-container {
     height: calc(100% - 2em);
+    color: var(--neutral-foreground-rest);
   }
 
   .json-tree-view {
-    border: 1px solid darkgray;
     border-radius: calc(var(--control-corner-radius) * 1px);
     overflow: auto;
     height: calc(100vh - 6em);
+    background-color: var(--neutral-layer-1);
   }
 
   .container-header {

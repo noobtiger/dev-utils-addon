@@ -58,7 +58,7 @@
     background-color: #0ebeff;
   }
   .output-container {
-    border: 1px solid lightgray;
+    border: 1px solid var(--neutral-stroke-rest);
     height: 100%;
   }
 </style>

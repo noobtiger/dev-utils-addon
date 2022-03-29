@@ -7,4 +7,6 @@ Get the extension/addon [here](https://chrome.google.com/webstore/detail/web-dev
 - JavaScript REPL
 - Text diff
 - Markdown preview
+- Lorem ipsum generator
+- HTML/CSS playground
 

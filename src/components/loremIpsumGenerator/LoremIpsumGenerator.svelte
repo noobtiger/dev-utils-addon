@@ -1,8 +1,8 @@
 <script lang="ts">
   import {loremIpsumSegments} from './utils';
   let loremIpsumText = [loremIpsumSegments[0]];
-  let numberOfParagraphs;
-  let numberOfCharacters;
+  let numberOfParagraphs = 1;
+  let numberOfCharacters = 120;
   const handleCopyClick = async () => {
     let textToCopy = loremIpsumText.join('\n');
     if (numberOfCharacters) {
@@ -17,13 +17,13 @@
 </script>
 
 <header class="button-container">
-  <input type="number" placeholder="Paragraphs"  bind:value={numberOfParagraphs} min={1} max={20} />
-  <fast-button appearance="stealth" on:click={handleGenerateClick}
+  <fast-button appearance="lightweight" on:click={handleGenerateClick}
     >Generate</fast-button
   >
-  <fast-button appearance="stealth" on:click={handleCopyClick}>Copy</fast-button
+  <input type="number" placeholder="Paragraphs" title="Number of paragraphs to generate"  bind:value={numberOfParagraphs} min={1} max={20} />
+  <fast-button appearance="lightweight" on:click={handleCopyClick}>Copy</fast-button
   >
-  <input type="number" placeholder="Line length"  bind:value={numberOfCharacters} min={1} />
+  <input type="number" placeholder="Line length" title="Number of characters per line to copy" bind:value={numberOfCharacters} min={1} />
 </header>
 <div class="container">
   {#each loremIpsumText as text}
@@ -37,9 +37,9 @@
   .container {
     height: calc(100% - 6em);
     overflow: auto;
+    color: var(--neutral-foreground-rest);
   }
   .button-container {
-    border-bottom: 1px solid lightgray;
     display: flex;
     align-items: center;
   }
@@ -47,10 +47,12 @@
     margin: 0 5px;
   }
   .button-container > input {
-    border-color: var(--accent-fill-rest);
-    border-radius: 4px;
-    height: 2em;
+    border-color: var(--accent-foreground-rest);
+    border-radius: 2px;
+    height: 1.5em;
     width: 100px;
+    background: transparent;
+    color: var(--neutral-foreground-rest);
   }
   .container p {
     width: 94%;

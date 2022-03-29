@@ -16,10 +16,10 @@
 </script>
 
 <header class="button-container">
-  <fast-button appearance="stealth" on:click={handleCompareClick}
+  <fast-button appearance="lightweight" on:click={handleCompareClick}
     >Compare</fast-button
   >
-	<fast-button appearance="stealth" on:click={handleResetClick}
+	<fast-button appearance="lightweight" on:click={handleResetClick}
 		>Reset</fast-button
 	>
 </header>
@@ -44,14 +44,11 @@
   }
 
   .root textarea {
-    border-color: var(--accent-fill-rest);
+    border-color: transparent;
     width: 100%;
     height: clamp(200px, 600px, 90vh);
     border-radius: 2px;
-  }
-
-  .button-container {
-    border-bottom: 1px solid lightgray;
+    background-color: var(--neutral-layer-4);
   }
   .button-container > fast-button {
     margin: 0 5px;

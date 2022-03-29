@@ -17,10 +17,9 @@
     height: 100%;
     display: grid;
     grid-template-columns: 200px 1fr;
-		background-image: url("/background.png");
   }
 	.root main {
-		background-color: white;
 		height: 100vh;
+		background-color: var(--neutral-layer-2);
 	}
 </style>

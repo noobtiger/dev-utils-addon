@@ -1,6 +1,6 @@
 {
   "name": "Web developer common tools",
-  "version": "0.2",
+  "version": "0.4",
   "manifest_version": 2,
   "description": "An extension for common tools for web developers.",
   "icons": {
@@ -13,6 +13,9 @@
   "browser_action": { },
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
-  }
+    "persistent": true
+  },
+  "permissions": [
+    "contextMenus"
+  ]
 }

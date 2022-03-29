@@ -50,7 +50,7 @@
 
 <div class="container">
   <section class="button-container">
-    <fast-button appearance="stealth" on:click={handleRunClick}>Run</fast-button
+    <fast-button appearance="lightweight" on:click={handleRunClick}>Run</fast-button
     >
   </section>
   <MonacoEditor bind:value={editorContentValue} on:update={handleEditorUpdate} />
@@ -76,7 +76,7 @@
   }
   .button-container {
     display: flex;
-    border-bottom: 1px solid lightgray;
+    /* border-bottom: 1px solid var(--neutral-stroke-rest);; */
     justify-content: flex-start;
   }
   .button-container > fast-button {
@@ -89,7 +89,7 @@
     width: calc(100% - 200px);
     border-top: 2px solid var(--accent-fill-rest);
     height: 250px;
-    background-color: var(--fill-color);
+    background-color: var(--neutral-layer-2);
     overflow: auto;
   }
   .console-container > header {
@@ -100,13 +100,15 @@
     height: 30px;
     line-height: 25px;
     width: calc(100% - 200px);
-    background-color: var(--fill-color);
+    background-color: var(--neutral-layer-3);
     display: grid;
     grid-template-columns: 1fr 100px;
-    border-top: 2px solid transparent;
+    border-top: 3px solid transparent;
+    color: var(--neutral-foreground-rest);
+    box-shadow: 0 4px 8px 0 var(--neutral-layer-card-container);
   }
   .console-container > header:hover {
-    border-top: 2px solid var(--accent-fill-focus);
+    border-top: 3px solid var(--accent-fill-hover);
     cursor: row-resize;
   }
 
@@ -115,13 +117,15 @@
   }
 
   .console-messages-container {
-    margin-top: 30px;
+    margin: 0px 5px;
+    margin-top: 40px;
   }
 
   .console-messages-container > article {
     font-size: 0.9rem;
     border-bottom: 1px solid lightgray;
     padding: 0 10px;
+    color: var(--neutral-foreground-rest);
   }
 
   .console-messages-container > article.message-bold {

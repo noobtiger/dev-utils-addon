@@ -43,6 +43,7 @@
         enabled: false,
       },
       automaticLayout: true,
+      theme: 'vs-dark',
     });
 
     editor.onDidChangeModelContent(event => {

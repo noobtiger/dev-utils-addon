@@ -38,7 +38,7 @@
     };
 
     Monaco = await import('monaco-editor');
-    editor = Monaco.editor.createDiffEditor(divEl);
+    editor = Monaco.editor.createDiffEditor(divEl, {theme: 'vs-dark'});
     model1 = Monaco.editor.createModel(value1, 'text/plain');
     model2 = Monaco.editor.createModel(value2, 'text/plain');
 
